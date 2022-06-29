@@ -22,10 +22,12 @@ paper beat rock
 funtion game and call playRound
 use loops to play five rounds
  */
-function computerPlay() {
+let computerPlay = function() {     
     let computerOptions = ["rock", "paper", "scissors"];
-    return Math.floor(Math.random()* computerOptions.length)
+    random = Math.floor(Math.random()* computerOptions.length);
+    return computerOptions[random];
 }
+   
 function playRound(playerSelection, computerSelection) {
     // your code here!
 
@@ -34,3 +36,4 @@ function playRound(playerSelection, computerSelection) {
   const playerSelection = "rock";
   const computerSelection = computerPlay();
   console.log(playRound(playerSelection, computerSelection));
+  console.log(computerSelection)
