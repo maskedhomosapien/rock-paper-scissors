@@ -29,11 +29,25 @@ let computerPlay = function() {
 }
    
 function playRound(playerSelection, computerSelection) {
-    // your code here!
-
+    if (playerSelection == computerSelection) {
+        return "it's a draw";
+    }else if(playerSelection == "rock" && computerSelection == "scissors") {
+        return "You win! rock beats scissors.";
+    }else if (playerSelection == "scissors" && computerSelection == "rock") {
+        return "You loose! rock beats scissors.";
+    }else if (playerSelection == "scissors" && computerSelection == "paper") {
+        return "You win! scissors beats paper.";
+    }else if (playerSelection == "paper" && computerSelection == "scissors") {
+        return "You loose! scissors beats paper.";
+    }else if (playerSelection == "paper" && computerSelection == "rock") {
+        return "You win! paper beats rock.";
+    }else if (playerSelection == "rock" && computerSelection == "paper") {
+        return "You loose! paper beats rock.";
+    }else {
+        return "Non winner"
+    }
   }
   
   const playerSelection = "rock";
   const computerSelection = computerPlay();
   console.log(playRound(playerSelection, computerSelection));
-  console.log(computerSelection)
