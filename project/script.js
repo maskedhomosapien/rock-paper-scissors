@@ -41,8 +41,10 @@ function playRound(playerSelection, computerSelection) {
         return "You win! paper beats rock.";
     }else if (playerSelection.toLowerCase() == "rock" && computerSelection == "paper") {
         return "You loose! paper beats rock.";
-    }else {
-        return "No winner"
+    }else if (playerSelection !== String){
+        console.log("Please enter your choice");
+    } else if ( playerSelection !== "rock" || "paper" || "scissors") {
+        return;
     }
   }
  /* 
@@ -74,7 +76,7 @@ function game() {
         computerSelection = computerPlay();
         let result = playRound(playerSelection, computerSelection);
         console.log(result)
-
+        
         if (result == "it's a draw") {
             playerPoints += 0;
             computerPoints += 0;
