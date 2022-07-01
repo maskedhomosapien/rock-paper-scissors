@@ -84,7 +84,16 @@ function game() {
         }else {
             computerPoints++;
         }
-
+    function winner() {
+        if (playerPoints == computerPoints) {
+            console.log("It's a tie!");
+        }else if (playerPoints > computerPoints) {
+            console.log("Player wins!")
+        }else {
+            console.log("Computer Wins")
+        };
+    return (winner());
+    }
     }
 }
   
