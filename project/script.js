@@ -30,7 +30,7 @@ function playRound(playerSelection, computerSelection) {
 function game() {
     playerPoints = 0;
     computerPoints = 0;
-    for (let i = 0; i < 5; i++) {
+   /* for (let i = 0; i < 5; i++) {
         playerSelection = prompt("Rock Paper Scissors Shoot!!");
         computerSelection = computerPlay();
         let result = playRound(playerSelection, computerSelection);
@@ -54,7 +54,7 @@ function game() {
         }
         console.log(playerPoints);
         console.log(computerPoints);
-    };
+    };*/
 
         if (playerPoints == computerPoints) {
             return "It's a tie!";
