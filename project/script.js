@@ -30,7 +30,7 @@ function game() {
     playerPoints = 0;
     computerPoints = 0;
     for (let i = 0; i < 5; i++) {
-        playerSelection = prompt("Rock Paper Scissors Shoot!!");
+        playerSelection = "";
         computerSelection = computerPlay();
         let result = playRound(playerSelection, computerSelection);
         console.log(result)
@@ -51,8 +51,8 @@ function game() {
         }else if (result == "You loose! paper beats rock.") {
             computerPoints += 1;
         }
-        console.log(playerPoints);
-        console.log(computerPoints);
+        
+        /* display playerPoints and computerPoints */
     };
 
         if (playerPoints == computerPoints) {
@@ -65,4 +65,4 @@ function game() {
 }
     let computerSelection = computerPlay();
     let playerSelection = "rock";
-    console.log(game());
+    /* start game() function */
