@@ -18,3 +18,9 @@ body {
     flex-flow: column nowrap;
     align-items: center;
 }
+
+.choices {
+    display: flex;
+    text-align: center;
+    flex-direction: row;
+}
