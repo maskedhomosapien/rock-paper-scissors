@@ -32,19 +32,19 @@ console.log(playerSelection)
 function playRound(playerSelection, computerSelection) {
 
     if (playerSelection == computerSelection) {
-        return "it's a draw";
+        displayOutcome.textContent = "it's a draw";
     }else if(playerSelection == "rock" && computerSelection == "scissors") {
-        return "You win! rock beats scissors.";
+        displayOutcome.textContent = "You win! rock beats scissors.";
     }else if (playerSelection == "scissors" && computerSelection == "rock") {
-        return "You loose! rock beats scissors.";
+        displayOutcome.textContent = "You loose! rock beats scissors.";
     }else if (playerSelection == "scissors" && computerSelection == "paper") {
-        return "You win! scissors beats paper.";
+        displayOutcome.textContent = "You win! scissors beats paper.";
     }else if (playerSelection == "paper" && computerSelection == "scissors") {
-        return "You loose! scissors beats paper.";
+        displayOutcome.textContent = "You loose! scissors beats paper.";
     }else if (playerSelection == "paper" && computerSelection == "rock") {
-        return "You win! paper beats rock.";
+        displayOutcome.textContent = "You win! paper beats rock.";
     }else if (playerSelection == "rock" && computerSelection == "paper") {
-        return "You loose! paper beats rock.";
+        displayOutcome.textContent = "You loose! paper beats rock.";
     }else if ( playerSelection !== "rock" || "paper" || "scissors") {
         return;
     }
