@@ -5,6 +5,19 @@ const displayOutcome = document.querySelector(".display-outcome > p");
 const userScore = document.querySelector("#user-score");
 const computerScore = document.querySelector("#computer-score");
 const playAgain = document.querySelector(".restart")
+let playerSelection = "";
+let computerSelection = computerPlay()
+
+
+rock.addEventListener("click", function() {
+    playerSelection = "rock";
+});
+paper.addEventListener("click", function() {
+    playerSelection = "paper";
+});
+scissors.addEventListener("click", function( ) {
+    playerSelection = "scissors";
+});
 
 
 let computerPlay = function() {     
@@ -36,8 +49,6 @@ function playRound(playerSelection, computerSelection) {
   }
 
 function game() {
-    playerPoints = 0;
-    computerPoints = 0;
     for (let i = 0; i < 5; i++) {
         playerSelection = "";
         computerSelection = computerPlay();
@@ -73,19 +84,12 @@ function game() {
         };
 }
 
+function win() {
+    
+}
 
 
-    rock.addEventListener("click", function() {
-        console.log("rock")
-    });
-    paper.addEventListener("click", function() {
-        console.log("paper")
-    });
-    scissors.addEventListener("click", function( ) {
-        console.log("scissors")
-    });
 
-    let computerSelection = computerPlay();
-    let playerSelection = "rock";
+    ;
     /* start game() function */
 

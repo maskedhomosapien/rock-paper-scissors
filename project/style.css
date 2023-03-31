@@ -111,3 +111,18 @@ body {
     gap: 5px;
     font-family: 'Play', sans-serif;;
 }
+
+.red-glow {
+    border: red;
+    box-shadow: 0px 0px 10px rgb(250, 100, 100);
+}
+
+.green-glow {
+    border: green;
+    box-shadow: 0px 0px 10px greenyellow;
+}
+
+.gray-glow {
+    border: rgb(81, 81, 81);
+    box-shadow: 0px 0px 10px rgb(169, 169, 169);
+}
