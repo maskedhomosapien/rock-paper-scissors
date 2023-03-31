@@ -47,3 +47,13 @@ body {
     box-shadow: 7px 7px 10px black;
     transform: translate(-10px, -10px);
 }
+
+.display-outcome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    height: 100px;
+    text-align: center;
+    margin-top: 20px;
+}
