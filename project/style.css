@@ -57,3 +57,34 @@ body {
     text-align: center;
     margin-top: 20px;
 }
+
+.display-results {
+    border: solid black;
+    text-align: center;
+    width: 150px;
+    height: 100px;    
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.badge {
+    background-color: black;
+    position: absolute;
+    color: whitesmoke;
+}
+
+#user-label {
+    top: 30px;
+    left: -10px;
+}
+
+#computer-label {
+    top: 30px;
+    right: -10px;
+}
+
+.score {
+    font-size: 2rem;
+}
