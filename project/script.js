@@ -11,13 +11,13 @@ let computerScore = 0;
 
 
 rock.addEventListener("click", function() {
-    playerSelection = "rock";
+    game("rock")
 });
 paper.addEventListener("click", function() {
-    playerSelection = "paper";
+    game("paper");
 });
 scissors.addEventListener("click", function( ) {
-    playerSelection = "scissors";
+    game("scissors");
 });
 
 
@@ -50,16 +50,15 @@ function playRound(playerSelection, computerSelection) {
     }
   }
 
-function game() {
-    for (let i = 0; i < 5; i++) {
-        playerSelection = "";
+function game(playerSelection) {
+        console.log(playerSelection)
         computerSelection = computerPlay();
         let result = playRound(playerSelection, computerSelection);
         console.log(result)
         
         if (result == "it's a draw") {
             UserScore += 0;
-            computerPoints += 0;
+            computerScore += 0;
         }else if(result == "You win! rock beats scissors.") {
             win();
         }else if(result == "You win! scissors beats paper.") {
@@ -72,14 +71,13 @@ function game() {
             computerScore += 1;
         }else if (result == "You loose! paper beats rock.") {
             computerScore += 1;
-        }
+        };
         
         /* display UserScore and computerScore */
-    };
 
         if (UserScore == computerScore) {
             return "It's a tie!";
-        }else if (UserScore > computerPoints) {
+        }else if (UserScore > computerScore) {
             return "Player wins!";
         }else {
             return "Computer Wins";
@@ -91,7 +89,6 @@ function win() {
     userScore_div.textContent = 10;
 }
 
-game();
 
     /* start game() function */
 
