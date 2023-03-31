@@ -92,19 +92,26 @@ function win(playerSelection_div) {
     userScore += 1;
     userScore_div.textContent = userScore;
     playerSelection_div.classList.add("green-glow")
-
+    setTimeout( () => {
+        playerSelection_div.classList.remove("green-glow")
+    }, 400)
 }
 
 function loose(playerSelection_div) {
     computerScore += 1;
     computerScore_div.textContent = computerScore;
     playerSelection_div.classList.add("red-glow");
+    setTimeout( () => {
+        playerSelection_div.classList.remove("red-glow")
+    }, 400)
 }
 
 function draw(playerSelection_div) {
     computerScore += 1;
     playerSelection_div.classList.add("gray-glow");
-    setTimeout
+    setTimeout( () => {
+        playerSelection_div.classList.remove("gray-glow")
+    }, 400)
 }
 
 
