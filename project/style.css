@@ -39,5 +39,11 @@ body {
     border: 5px solid black;
     border-radius: 12px;
     padding: 5px;
-    font-family: 'Play', sans-serif;;
+    font-family: 'Play', sans-serif;
+    transition: all 0.3s ease;
+}
+
+.choice:hover {
+    box-shadow: 7px 7px 10px black;
+    transform: translate(-10px, -10px);
 }
