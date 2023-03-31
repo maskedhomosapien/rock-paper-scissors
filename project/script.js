@@ -1,3 +1,13 @@
+const rock = document.querySelector("#rock_div");
+const paper = document.querySelector("#rock_div");
+const scissors = document.querySelector("#rock_div");
+const displayOutcome = document.querySelector(".display-outcome > p");
+const userScore = document.querySelector("#user-score");
+const computerScore = document.querySelector("#computer-score");
+const playAgain = document.querySelector(".restart")
+
+
+
 let computerPlay = function() {     
     let computerOptions = ["rock", "paper", "scissors"];
     random = Math.floor(Math.random()* computerOptions.length);
