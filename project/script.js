@@ -1,11 +1,10 @@
 const rock = document.querySelector("#rock_div");
-const paper = document.querySelector("#rock_div");
-const scissors = document.querySelector("#rock_div");
+const paper = document.querySelector("#paper_div");
+const scissors = document.querySelector("#scissors_div");
 const displayOutcome = document.querySelector(".display-outcome > p");
 const userScore = document.querySelector("#user-score");
 const computerScore = document.querySelector("#computer-score");
 const playAgain = document.querySelector(".restart")
-
 
 
 let computerPlay = function() {     
@@ -73,6 +72,20 @@ function game() {
             return "Computer Wins";
         };
 }
+
+
+
+    rock.addEventListener("click", function() {
+        console.log("rock")
+    });
+    paper.addEventListener("click", function() {
+        console.log("paper")
+    });
+    scissors.addEventListener("click", function( ) {
+        console.log("scissors")
+    });
+
     let computerSelection = computerPlay();
     let playerSelection = "rock";
     /* start game() function */
+
