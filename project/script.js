@@ -27,8 +27,9 @@ let computerPlay = function() {
     return computerOptions[random];
 }
    
+console.log(playerSelection)
+
 function playRound(playerSelection, computerSelection) {
-    console.log(playerSelection)
 
     if (playerSelection == computerSelection) {
         return "it's a draw";
@@ -44,9 +45,7 @@ function playRound(playerSelection, computerSelection) {
         return "You win! paper beats rock.";
     }else if (playerSelection == "rock" && computerSelection == "paper") {
         return "You loose! paper beats rock.";
-    }else if (playerSelection !== String){
-        console.log("Please enter your choice");
-    } else if ( playerSelection !== "rock" || "paper" || "scissors") {
+    }else if ( playerSelection !== "rock" || "paper" || "scissors") {
         return;
     }
   }
@@ -59,7 +58,7 @@ function game() {
         console.log(result)
         
         if (result == "it's a draw") {
-            playerPoints += 0;
+            UserScore += 0;
             computerPoints += 0;
         }else if(result == "You win! rock beats scissors.") {
             win();
@@ -68,19 +67,19 @@ function game() {
         }else if(result == "You win! paper beats rock.") {
             UserScore += 1;
         }else if (result == "You loose! rock beats scissors.") {
-            computerPoints += 1;
+            computerScore += 1;
         }else if (result == "You loose! scissors beats paper.") {
-            computerPoints += 1;
+            computerScore += 1;
         }else if (result == "You loose! paper beats rock.") {
-            computerPoints += 1;
+            computerScore += 1;
         }
         
-        /* display playerPoints and computerPoints */
+        /* display UserScore and computerScore */
     };
 
-        if (playerPoints == computerPoints) {
+        if (UserScore == computerScore) {
             return "It's a tie!";
-        }else if (playerPoints > computerPoints) {
+        }else if (UserScore > computerPoints) {
             return "Player wins!";
         }else {
             return "Computer Wins";
@@ -92,7 +91,7 @@ function win() {
     userScore_div.textContent = 10;
 }
 
-playRound();
+game();
 
     /* start game() function */
 
