@@ -56,6 +56,7 @@ body {
     height: 100px;
     text-align: center;
     margin-top: 20px;
+    font-family: 'Play', sans-serif;
 }
 
 .display-results {
@@ -68,6 +69,7 @@ body {
     align-items: center;
     justify-content: center;
     margin-top: 30px;
+    font-family: 'Play', sans-serif;
 }
 
 .badge {
@@ -107,4 +109,5 @@ body {
     align-items: center;
     font-size: 1.2rem;
     gap: 5px;
+    font-family: 'Play', sans-serif;;
 }
