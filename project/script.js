@@ -1,13 +1,16 @@
 const rock = document.querySelector("#rock");
 const paper = document.querySelector("#paper");
 const scissors = document.querySelector("#scissors");
-const userScore_div = document.querySelector("#user-score")
-const computerScore_div = document.querySelector("#computer-score")
+const userScore_div = document.querySelector("#user-score");
+const computerScore_div = document.querySelector("#computer-score");
 const displayOutcome = document.querySelector(".display-outcome > p");
-const playAgain = document.querySelector(".restart")
+const playAgain = document.querySelector(".restart");
+const user_badge = document.getElementById("user-label");
+const computer_badge = document.getElementById("computer-label");
 let playerSelection = "";
 let userScore = 0;
 let computerScore = 0;
+console.log(user_badge)
 
 
 rock.addEventListener("click", function() {
@@ -91,9 +94,14 @@ function win(playerSelection_div) {
     console.log(userScore)
     userScore += 1;
     userScore_div.textContent = userScore;
-    playerSelection_div.classList.add("green-glow")
+    playerSelection_div.classList.add("green-glow");
+    user_badge.classList.add("green.glow");
+    user_badge.style.backgroundColor = "green";
+    computer_badge.style.backgroundColor = "red";
     setTimeout( () => {
         playerSelection_div.classList.remove("green-glow")
+        user_badge.style.backgroundColor = "black";
+        computer_badge.style.backgroundColor = "black";
     }, 400)
 }
 
@@ -101,16 +109,24 @@ function loose(playerSelection_div) {
     computerScore += 1;
     computerScore_div.textContent = computerScore;
     playerSelection_div.classList.add("red-glow");
+    user_badge.style.backgroundColor = "red";
+    computer_badge.style.backgroundColor = "green";
     setTimeout( () => {
         playerSelection_div.classList.remove("red-glow")
+        user_badge.style.backgroundColor = "black";
+        computer_badge.style.backgroundColor = "black";
     }, 400)
 }
 
 function draw(playerSelection_div) {
     computerScore += 1;
     playerSelection_div.classList.add("gray-glow");
+    user_badge.style.backgroundColor = "gray";
+    computer_badge.style.backgroundColor = "gray";
     setTimeout( () => {
-        playerSelection_div.classList.remove("gray-glow")
+        playerSelection_div.classList.remove("gray-glow");
+        user_badge.style.backgroundColor = "black";
+        computer_badge.style.backgroundColor = "black";
     }, 400)
 }
 
