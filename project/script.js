@@ -1,9 +1,9 @@
-const rock = document.querySelector("#rock_div");
-const paper = document.querySelector("#paper_div");
-const scissors = document.querySelector("#scissors_div");
+const rock = document.querySelector("#rock");
+const paper = document.querySelector("#paper");
+const scissors = document.querySelector("#scissors");
+const userScore_div = document.querySelector("#user-score")
+const computerScore_div = document.querySelector("#computer-score")
 const displayOutcome = document.querySelector(".display-outcome > p");
-const userScore_div = document.querySelector("#user-score");
-const computerScore_div = document.querySelector("#computer-score");
 const playAgain = document.querySelector(".restart")
 let playerSelection = "";
 let userScore = 0;
@@ -51,28 +51,29 @@ function playRound(playerSelection, computerSelection) {
   }
 
 function game(playerSelection) {
-        console.log(playerSelection)
+        const playerSelection_div = document.getElementById(playerSelection);
+        console.log(playerSelection_div);
         computerSelection = computerPlay();
         let result = playRound(playerSelection, computerSelection);
         console.log(result)
         displayOutcome.textContent = result;
 
         if (result == "it's a draw") {
-            draw();
+            draw(playerSelection_div);
             userScore += 0;
             computerScore += 0;
         }else if(result == "You win! rock beats scissors.") {
-            win();
+            win(playerSelection_div);
         }else if(result == "You win! scissors beats paper.") {
-            win();
+            win(playerSelection_div);
         }else if(result == "You win! paper beats rock.") {
-            win();
+            win(playerSelection_div);
         }else if (result == "You loose! rock beats scissors.") {
-            loose();
+            loose(playerSelection_div);
         }else if (result == "You loose! scissors beats paper.") {
-            loose();
+            loose(playerSelection_div);
         }else if (result == "You loose! paper beats rock.") {
-            loose();
+            loose(playerSelection_div);
         };
         
         /* display userScore and computerScore */
@@ -86,22 +87,23 @@ function game(playerSelection) {
         }; */
 }
 
-function win() {
+function win(playerSelection_div) {
     console.log(userScore)
     userScore += 1;
     userScore_div.textContent = userScore;
-    userScore_div.classList.add("green-glow")
+    playerSelection_div.classList.add("green-glow")
+
 }
 
-function loose() {
+function loose(playerSelection_div) {
     computerScore += 1;
-    computerScore_div.textContent = computerScore
-    userScore_div.classList.add("red-glow")
+    computerScore_div.textContent = computerScore;
+    playerSelection_div.classList.add("red-glow");
 }
 
-function draw() {
+function draw(playerSelection_div) {
     computerScore += 1;
-    userScore_div.classList.add("gray-glow")
+    playerSelection_div.classList.add("gray-glow");
     setTimeout
 }
 
