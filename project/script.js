@@ -90,15 +90,18 @@ function win() {
     console.log(userScore)
     userScore += 1;
     userScore_div.textContent = userScore;
+    userScore_div.classList.add("green-glow")
 }
 
 function loose() {
     computerScore += 1;
     computerScore_div.textContent = computerScore
+    userScore_div.classList.add("red-glow")
 }
 
 function draw() {
     computerScore += 1;
+    userScore_div.classList.add("gray-glow")
     setTimeout
 }
 
