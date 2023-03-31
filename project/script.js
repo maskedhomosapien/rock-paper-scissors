@@ -6,7 +6,7 @@ const userScore_div = document.querySelector("#user-score");
 const computerScore_div = document.querySelector("#computer-score");
 const playAgain = document.querySelector(".restart")
 let playerSelection = "";
-let UserScore = 0;
+let userScore = 0;
 let computerScore = 0;
 
 
@@ -32,19 +32,19 @@ console.log(playerSelection)
 function playRound(playerSelection, computerSelection) {
 
     if (playerSelection == computerSelection) {
-        displayOutcome.textContent = "it's a draw";
+        return "it's a draw";
     }else if(playerSelection == "rock" && computerSelection == "scissors") {
-        displayOutcome.textContent = "You win! rock beats scissors.";
+        return "You win! rock beats scissors.";
     }else if (playerSelection == "scissors" && computerSelection == "rock") {
-        displayOutcome.textContent = "You loose! rock beats scissors.";
+        return "You loose! rock beats scissors.";
     }else if (playerSelection == "scissors" && computerSelection == "paper") {
-        displayOutcome.textContent = "You win! scissors beats paper.";
+        return "You win! scissors beats paper.";
     }else if (playerSelection == "paper" && computerSelection == "scissors") {
-        displayOutcome.textContent = "You loose! scissors beats paper.";
+        return "You loose! scissors beats paper.";
     }else if (playerSelection == "paper" && computerSelection == "rock") {
-        displayOutcome.textContent = "You win! paper beats rock.";
+        return "You win! paper beats rock.";
     }else if (playerSelection == "rock" && computerSelection == "paper") {
-        displayOutcome.textContent = "You loose! paper beats rock.";
+        return "You loose! paper beats rock.";
     }else if ( playerSelection !== "rock" || "paper" || "scissors") {
         return;
     }
@@ -55,38 +55,51 @@ function game(playerSelection) {
         computerSelection = computerPlay();
         let result = playRound(playerSelection, computerSelection);
         console.log(result)
-        
+        displayOutcome.textContent = result;
+
         if (result == "it's a draw") {
-            UserScore += 0;
+            draw();
+            userScore += 0;
             computerScore += 0;
         }else if(result == "You win! rock beats scissors.") {
             win();
         }else if(result == "You win! scissors beats paper.") {
-            UserScore += 1;
+            win();
         }else if(result == "You win! paper beats rock.") {
-            UserScore += 1;
+            win();
         }else if (result == "You loose! rock beats scissors.") {
-            computerScore += 1;
+            loose();
         }else if (result == "You loose! scissors beats paper.") {
-            computerScore += 1;
+            loose();
         }else if (result == "You loose! paper beats rock.") {
-            computerScore += 1;
+            loose();
         };
         
-        /* display UserScore and computerScore */
+        /* display userScore and computerScore */
 
-        if (UserScore == computerScore) {
+     /*    if (userScore == computerScore) {
             return "It's a tie!";
-        }else if (UserScore > computerScore) {
+        }else if (userScore > computerScore) {
             return "Player wins!";
         }else {
             return "Computer Wins";
-        };
+        }; */
 }
 
 function win() {
-    UserScore += 1;
-    userScore_div.textContent = 10;
+    console.log(userScore)
+    userScore += 1;
+    userScore_div.textContent = userScore;
+}
+
+function loose() {
+    computerScore += 1;
+    computerScore_div.textContent = computerScore
+}
+
+function draw() {
+    computerScore += 1;
+    setTimeout
 }
 
 
