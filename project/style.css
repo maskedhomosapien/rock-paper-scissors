@@ -61,18 +61,21 @@ body {
 .display-results {
     border: solid black;
     text-align: center;
-    width: 150px;
+    width: 200px;
     height: 100px;    
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
+    margin-top: 30px;
 }
 
 .badge {
     background-color: black;
     position: absolute;
     color: whitesmoke;
+    padding: 5px;
+    border-radius: 3px;
 }
 
 #user-label {
@@ -87,4 +90,11 @@ body {
 
 .score {
     font-size: 2rem;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column;
 }
