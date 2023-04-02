@@ -104,8 +104,8 @@ body {
 .restart {
     margin-top: 50px;
     visibility: hidden;
-/*     display: none;
- */    flex-direction: column;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     font-size: 1.2rem;

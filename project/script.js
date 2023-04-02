@@ -122,14 +122,12 @@ function draw(playerSelection_div) {
 }
 
 
-function decider() {
+function decider(userScore, computerScore) {
     console.log(userScore)
-    if(userScore >= 6 && userScore > computerScore){
-        displayResults.style.display = "none";
-        playAgain.style.display = "block";
-    }else if(computerScore >= 6 && computerScore  > userScore){
-        playAgain.style.display = "flex";
-        displayResults.style.display = "none";
+    if(userScore >= 6){
+        playAgain.style.display = "visible";
+    }else if(computerScore >= 6){
+        playAgain.style.visibility = "visible";
     }
 }
 
