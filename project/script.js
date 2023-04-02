@@ -7,12 +7,12 @@ const displayOutcome = document.querySelector(".display-outcome > p");
 const playAgain = document.querySelector(".restart");
 const user_badge = document.getElementById("user-label");
 const computer_badge = document.getElementById("computer-label");
-const displayResults = document.querySelector(".display-results")
+const displayResults = document.querySelector(".display-results");
+const choices = document.querySelectorAll(".choices");
+console.log(choices)
 let playerSelection = "";
 let userScore = 0;
 let computerScore = 0;
-console.log(playAgain)
-
 
 rock.addEventListener("click", function() {
     game("rock")
@@ -20,9 +20,13 @@ rock.addEventListener("click", function() {
 paper.addEventListener("click", function() {
     game("paper");
 });
-scissors.addEventListener("click", function( ) {
+scissors.addEventListener("click", function() {
     game("scissors");
 });
+
+playAgain.addEventListener("click", function(){
+    restart();
+})
 
 
 let computerPlay = function() {     
@@ -54,12 +58,10 @@ function playRound(playerSelection, computerSelection) {
     }
   }
 
-function game(playerSelection) {
+function game(playerSelection,choices) {
         const playerSelection_div = document.getElementById(playerSelection);
-        console.log(playerSelection_div);
         computerSelection = computerPlay();
         let result = playRound(playerSelection, computerSelection);
-        console.log(result)
         displayOutcome.textContent = result;
 
         if (result == "it's a draw") {
@@ -124,10 +126,19 @@ function draw(playerSelection_div) {
 
 function decider(userScore, computerScore) {
     console.log(userScore)
-    if(userScore >= 6){
-        playAgain.style.display = "visible";
-    }else if(computerScore >= 6){
+    if(userScore == 3){
         playAgain.style.visibility = "visible";
+    }else if(computerScore == 3){
+        playAgain.style.visibility = "visible";
+        displayOutcome.style.textContent = "You lost the Game";
     }
 }
 
+function restart() {
+    userScore = 0;
+    computerScore = 0;
+    console.log("yes")
+    userScore_div.textContent = 0;
+    computerScore_div.textContent = 0;
+    playAgain.style.visibility = "hidden";
+}
