@@ -7,10 +7,11 @@ const displayOutcome = document.querySelector(".display-outcome > p");
 const playAgain = document.querySelector(".restart");
 const user_badge = document.getElementById("user-label");
 const computer_badge = document.getElementById("computer-label");
+const displayResults = document.querySelector(".display-results")
 let playerSelection = "";
 let userScore = 0;
 let computerScore = 0;
-console.log(user_badge)
+console.log(playAgain)
 
 
 rock.addEventListener("click", function() {
@@ -78,20 +79,11 @@ function game(playerSelection) {
         }else if (result == "You loose! paper beats rock.") {
             loose(playerSelection_div);
         };
-        
-        /* display userScore and computerScore */
 
-     /*    if (userScore == computerScore) {
-            return "It's a tie!";
-        }else if (userScore > computerScore) {
-            return "Player wins!";
-        }else {
-            return "Computer Wins";
-        }; */
+        decider(userScore, computerScore);
 }
 
 function win(playerSelection_div) {
-    console.log(userScore)
     userScore += 1;
     userScore_div.textContent = userScore;
     playerSelection_div.classList.add("green-glow");
@@ -119,7 +111,6 @@ function loose(playerSelection_div) {
 }
 
 function draw(playerSelection_div) {
-    computerScore += 1;
     playerSelection_div.classList.add("gray-glow");
     user_badge.style.backgroundColor = "gray";
     computer_badge.style.backgroundColor = "gray";
@@ -131,5 +122,14 @@ function draw(playerSelection_div) {
 }
 
 
-    /* start game() function */
+function decider() {
+    console.log(userScore)
+    if(userScore >= 6 && userScore > computerScore){
+        displayResults.style.display = "none";
+        playAgain.style.display = "block";
+    }else if(computerScore >= 6 && computerScore  > userScore){
+        playAgain.style.display = "flex";
+        displayResults.style.display = "none";
+    }
+}
 
