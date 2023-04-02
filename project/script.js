@@ -128,9 +128,10 @@ function decider(userScore, computerScore) {
     console.log(userScore)
     if(userScore == 3){
         playAgain.style.visibility = "visible";
+        displayOutcome.textContent = "You won the Game!"
     }else if(computerScore == 3){
         playAgain.style.visibility = "visible";
-        displayOutcome.style.textContent = "You lost the Game";
+        displayOutcome.textContent = "You lost the Game";
     }
 }
 
