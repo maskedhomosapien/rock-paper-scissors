@@ -82,7 +82,7 @@ function game(playerSelection,choices) {
         }else if (result == "You loose! paper beats rock.") {
             loose(playerSelection_div);
         };}
-        
+
         decider(userScore, computerScore);
 }
 
@@ -145,4 +145,5 @@ function restart() {
     userScore_div.textContent = 0;
     computerScore_div.textContent = 0;
     playAgain.style.visibility = "hidden";
+    stopCount = false;
 }
