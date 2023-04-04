@@ -32,6 +32,10 @@ body {
     height: 80px;
 }
 
+/* .choice:mou {
+    
+} */
+
 .choice {
     display: flex; 
     flex-direction: column;
@@ -129,4 +133,9 @@ body {
 .gray-glow {
     border: 5px solid rgb(138, 137, 137);
     box-shadow: 0px 0px 10px rgb(219, 219, 219);
+}
+#gameCount__div {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 2rem;
 }

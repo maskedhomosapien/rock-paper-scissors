@@ -9,12 +9,14 @@ const user_badge = document.getElementById("user-label");
 const computer_badge = document.getElementById("computer-label");
 const displayResults = document.querySelector(".display-results");
 const choices = document.querySelectorAll(".choices");
+const gameCount__span = document.querySelector("#gameCount");
+let gameCount = 5; 
+console.log(gameCount)
 console.log(choices)
 let playerSelection = "";
 let userScore = 0;
 let computerScore = 0;
 let stopCount = false;
-let gameCount = 5;
 
 rock.addEventListener("click", function() {
     game("rock")
@@ -84,10 +86,12 @@ function game(playerSelection,choices) {
             loose(playerSelection_div);
         }else if (result == "You loose! paper beats rock.") {
             loose(playerSelection_div);
-        };}
+        };
         gameCount -= 1;
+        gameCount__span.textContent = `${gameCount}`
         decider(userScore, computerScore,gameCount);
         console.log(gameCount)
+    }
 }
 
 function win(playerSelection_div) {
