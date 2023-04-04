@@ -14,6 +14,7 @@ let playerSelection = "";
 let userScore = 0;
 let computerScore = 0;
 let stopCount = false;
+let gameCount = 5;
 
 rock.addEventListener("click", function() {
     game("rock")
@@ -82,8 +83,9 @@ function game(playerSelection,choices) {
         }else if (result == "You loose! paper beats rock.") {
             loose(playerSelection_div);
         };}
-
-        decider(userScore, computerScore);
+        gameCount -= 1;
+        decider(userScore, computerScore,gameCount);
+        console.log(gameCount)
 }
 
 function win(playerSelection_div) {
@@ -126,19 +128,23 @@ function draw(playerSelection_div) {
 
 
 function decider(userScore, computerScore) {
-    console.log(userScore)
-    if(userScore == 3){
+    if(gameCount == 0 && userScore > computerScore){
         playAgain.style.visibility = "visible";
         displayOutcome.textContent = "You won the Game!";
         stopCount = true;
-    }else if(computerScore == 3){
+    }else if(gameCount == 0 && computerScore > userScore){
         playAgain.style.visibility = "visible";
         displayOutcome.textContent = "You lost the Game";
         stopCount = true;
+    }else if(gameCount == 0 && userScore == computerScore){
+        playAgain.style.visibility = "visible";
+        displayOutcome.textContent = "It's a draw!";
+        stopCount = true
     }
 }
 
 function restart() {
+    gameCount = 5;
     userScore = 0;
     computerScore = 0;
     console.log("yes")
