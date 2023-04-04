@@ -63,10 +63,12 @@ function playRound(playerSelection, computerSelection) {
 function game(playerSelection,choices) {
         const playerSelection_div = document.getElementById(playerSelection);
         computerSelection = computerPlay();
-        let result = playRound(playerSelection, computerSelection);
-        displayOutcome.textContent = result;
+        let result = playRound(playerSelection, computerSelection); 
 
-        if(!stopCount){if (result == "it's a draw") {
+        if(!stopCount){
+            displayOutcome.textContent = result;
+
+        if (result == "it's a draw") {
             draw(playerSelection_div);
             userScore += 0;
             computerScore += 0;
