@@ -13,6 +13,7 @@ console.log(choices)
 let playerSelection = "";
 let userScore = 0;
 let computerScore = 0;
+let stopCount = false;
 
 rock.addEventListener("click", function() {
     game("rock")
@@ -64,7 +65,7 @@ function game(playerSelection,choices) {
         let result = playRound(playerSelection, computerSelection);
         displayOutcome.textContent = result;
 
-        if (result == "it's a draw") {
+        if(!stopCount){if (result == "it's a draw") {
             draw(playerSelection_div);
             userScore += 0;
             computerScore += 0;
@@ -80,8 +81,8 @@ function game(playerSelection,choices) {
             loose(playerSelection_div);
         }else if (result == "You loose! paper beats rock.") {
             loose(playerSelection_div);
-        };
-
+        };}
+        
         decider(userScore, computerScore);
 }
 
@@ -128,10 +129,12 @@ function decider(userScore, computerScore) {
     console.log(userScore)
     if(userScore == 3){
         playAgain.style.visibility = "visible";
-        displayOutcome.textContent = "You won the Game!"
+        displayOutcome.textContent = "You won the Game!";
+        stopCount = true;
     }else if(computerScore == 3){
         playAgain.style.visibility = "visible";
         displayOutcome.textContent = "You lost the Game";
+        stopCount = true;
     }
 }
 
