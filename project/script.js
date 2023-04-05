@@ -151,7 +151,6 @@ function restart() {
     gameCount = 5;
     userScore = 0;
     computerScore = 0;
-    console.log("yes")
     userScore_div.textContent = 0;
     computerScore_div.textContent = 0;
     playAgain.style.visibility = "hidden";
