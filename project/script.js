@@ -149,6 +149,7 @@ function decider(userScore, computerScore) {
 
 function restart() {
     gameCount = 5;
+    gameCount__span.textContent = 5;
     userScore = 0;
     computerScore = 0;
     userScore_div.textContent = 0;
