@@ -51,6 +51,7 @@ body {
 .choice:hover {
     box-shadow: 7px 7px 10px black;
     transform: translate(-10px, -10px);
+    cursor: pointer;
 }
 
 .display-outcome {
