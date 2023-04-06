@@ -10,14 +10,19 @@ h1 {
     padding-top: 30px;
 }
 
-body {
+.main {
     display: flex;
     justify-content: center;
-    width: 80%;
+    width: 55%;
+    height: 100vh;
     margin: 0 auto;
     flex-flow: column nowrap;
     align-items: center;
+    background-color: rgba(151, 151, 151, 0.427);
+    box-shadow: 5px 0px 10px black, -5px 0px 10px black;
 }
+
+
 
 .choices {
     display: flex;
