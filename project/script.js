@@ -142,7 +142,7 @@ function decider(userScore, computerScore) {
         stopCount = true;
     }else if(gameCount == 0 && userScore == computerScore){
         playAgain.style.visibility = "visible";
-        displayOutcome.textContent = "It's a draw!";
+        displayOutcome.textContent = "It's a draw, Points shared!";
         stopCount = true
     }
 }
